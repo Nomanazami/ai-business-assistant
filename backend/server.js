@@ -24,10 +24,11 @@ const groq = new Groq({
 mongoose.connect(process.env.MONGODB_URI, {
   serverSelectionTimeoutMS: 30000,
   socketTimeoutMS: 45000,
+  bufferCommands: false,
+  maxPoolSize: 10,
 })
   .then(() => console.log("✅ MongoDB connect ho gaya!"))
   .catch(err => console.log("❌ MongoDB error:", err));
-
 // ⭐ Auth routes
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
