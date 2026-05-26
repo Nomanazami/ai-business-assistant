@@ -21,14 +21,21 @@ const groq = new Groq({
 });
 
 // ⭐ MongoDB connect
-mongoose.connect(process.env.MONGODB_URI, {
-  serverSelectionTimeoutMS: 30000,
-  socketTimeoutMS: 45000,
-  bufferCommands: false,
-  maxPoolSize: 10,
-})
-  .then(() => console.log("✅ MongoDB connect ho gaya!"))
-  .catch(err => console.log("❌ MongoDB error:", err));
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
+    });
+    console.log("✅ MongoDB connect ho gaya!");
+    await seedProducts();
+  } catch (err) {
+    console.log("❌ MongoDB error:", err);
+  }
+};
+
+connectDB();
+
 // ⭐ Auth routes
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
