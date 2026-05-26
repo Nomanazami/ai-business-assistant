@@ -9,7 +9,7 @@ function Dashboard({ token }) {
 
   // ⭐ Stats load karo
   useEffect(() => {
-    axios.get("http://localhost:5000/api/stats/dashboard", {
+    axios.get("https://ai-business-assistant-backend.vercel.app/api/stats/dashboard", {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => {
