@@ -21,7 +21,10 @@ const groq = new Groq({
 });
 
 // ⭐ MongoDB connect
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {
+  serverSelectionTimeoutMS: 30000,
+  socketTimeoutMS: 45000,
+})
   .then(() => console.log("✅ MongoDB connect ho gaya!"))
   .catch(err => console.log("❌ MongoDB error:", err));
 
