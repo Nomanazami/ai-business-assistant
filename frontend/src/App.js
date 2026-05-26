@@ -27,8 +27,8 @@ function App() {
     try {
       setAuthError("");
       const url = authMode === "login"
-        ? "https://ai-business-assistant-backend.vercel.app/api/auth/login"
-        : "https://ai-business-assistant-backend.vercel.app/api/auth/register";
+        ? "https://ai-business-assistant-backend-opal.vercel.app/api/auth/login"
+        : "https://ai-business-assistant-backend-opal.vercel.app/api/auth/register";
 
       const response = await axios.post(url, authData);
 
@@ -61,7 +61,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://ai-business-assistant-backend.vercel.app/api/chat",
+        "https://ai-business-assistant-backend-opal.vercel.app/api/chat",
         { messages: updatedMessages },
         {
           headers: {

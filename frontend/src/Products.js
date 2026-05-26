@@ -8,7 +8,7 @@ function Products({ onProductClick }) {
 
   // ⭐ Products load karo
   useEffect(() => {
-    axios.get("https://ai-business-assistant-backend.vercel.app/api/products")
+    axios.get("https://ai-business-assistant-backend-opal.vercel.app/api/products")
       .then(res => {
         setProducts(res.data);
         setLoading(false);

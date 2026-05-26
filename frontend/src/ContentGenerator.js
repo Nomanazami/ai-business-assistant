@@ -21,7 +21,7 @@ function ContentGenerator({ token }) {
 
     try {
       const response = await axios.post(
-        "https://ai-business-assistant-backend.vercel.app/api/content/generate",
+        "https://ai-business-assistant-backend-opal.vercel.app/api/content/generate",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` }
