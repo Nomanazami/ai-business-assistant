@@ -120,7 +120,7 @@ const seedProducts = async () => {
   }
 };
 
-app.listen(5000, async () => {
+
+app.listen(5000, () => {
   console.log("✅ Backend chal raha hai — Port 5000");
-  await seedProducts();
 });
