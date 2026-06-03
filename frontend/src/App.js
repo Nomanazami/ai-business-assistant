@@ -36,7 +36,7 @@ function App() {
       setToken(response.data.token);
 
     } catch (err) {
-      setAuthError(err.response?.data?.error || "Kuch galat hua!");
+      setAuthError(err.response?.data?.error || "Something Wrrong!");
     }
   };
 
@@ -81,7 +81,7 @@ function App() {
 
   const handleProductClick = (product) => {
     sendMessage(
-      `Mujhe ${product.name} ke baare mein batao. Rs.${product.price} mein value for money hai?`
+      `Tell me about ${product.name} . Rs.${product.price} in value for money?`
     );
   };
 

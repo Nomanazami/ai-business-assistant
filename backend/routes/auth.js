@@ -15,7 +15,7 @@ router.post('/register', async (req, res) => {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({
-        error: "Email pehle se registered hai!"
+        error: "Email is already registered!"
       });
     }
 
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
     );
 
     res.json({
-      message: "Account ban gaya! ✅",
+      message: "Account created successfully ✅",
       token,
       user: { name: user.name, email: user.email }
     });
@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({
-        error: "Email nahi mila!"
+        error: "Email not found!"
       });
     }
 
@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
-        error: "Password galat hai!"
+        error: "Wrong Password!"
       });
     }
 
@@ -78,7 +78,7 @@ router.post('/login', async (req, res) => {
     );
 
     res.json({
-      message: "Login ho gaya! ✅",
+      message: "Login Successfully ✅",
       token,
       user: { name: user.name, email: user.email }
     });
