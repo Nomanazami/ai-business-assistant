@@ -26,7 +26,7 @@ function Dashboard({ token }) {
 
   if (loading) return (
     <div style={styles.loading}>
-      ⏳ Dashboard load ho raha hai...
+      ⏳ Loading dashboard...
     </div>
   );
 
@@ -70,7 +70,7 @@ function Dashboard({ token }) {
         <div style={styles.table}>
           {/* Header */}
           <div style={styles.tableHeader}>
-            <span>Naam</span>
+            <span>Name</span>
             <span>Email</span>
             <span>Date</span>
           </div>

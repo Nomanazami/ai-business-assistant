@@ -47,7 +47,7 @@ function ContentGenerator({ token }) {
         ✍️ AI Content Generator
       </h2>
       <p style={styles.subtitle}>
-        Product ka naam do — AI content banayega!
+      Name the product - AI will create content! 
       </p>
 
       {/* ⭐ Form */}
@@ -56,11 +56,11 @@ function ContentGenerator({ token }) {
         {/* Product Name */}
         <div style={styles.inputGroup}>
           <label style={styles.label}>
-            🏷️ Product Ka Naam
+            🏷️ Product Name 
           </label>
           <input
             style={styles.input}
-            placeholder="Jaise: Arabian Oud Perfume"
+            placeholder="like: Arabian Oud Perfume"
             value={formData.productName}
             onChange={(e) => setFormData({
               ...formData,
@@ -72,11 +72,11 @@ function ContentGenerator({ token }) {
         {/* Description */}
         <div style={styles.inputGroup}>
           <label style={styles.label}>
-            📝 Product Ki Description
+            📝 Product Description
           </label>
           <textarea
             style={styles.textarea}
-            placeholder="Jaise: Yeh ek luxury Arabian oud hai jo 12 ghante tak rehta hai"
+            placeholder="like: This is a luxury Arabian fragrance that lasts for 12 hours."
             value={formData.description}
             onChange={(e) => setFormData({
               ...formData,
@@ -88,7 +88,7 @@ function ContentGenerator({ token }) {
         {/* Platform */}
         <div style={styles.inputGroup}>
           <label style={styles.label}>
-            📱 Platform Chuno
+            📱 Select Platform 
           </label>
           <div style={styles.optionGrid}>
             {[
@@ -120,7 +120,7 @@ function ContentGenerator({ token }) {
         {/* Tone */}
         <div style={styles.inputGroup}>
           <label style={styles.label}>
-            🎭 Tone Chuno
+            🎭 Select Tone
           </label>
           <div style={styles.optionGrid}>
             {[
@@ -155,7 +155,7 @@ function ContentGenerator({ token }) {
           onClick={generateContent}
           disabled={loading}
         >
-          {loading ? "⏳ Generating..." : "✨ Content Generate Karo"}
+          {loading ? "⏳ Generating..." : "✨ Generate Content"}
         </button>
       </div>
 
@@ -163,7 +163,7 @@ function ContentGenerator({ token }) {
       {content && (
         <div style={styles.results}>
           <h3 style={styles.resultsTitle}>
-            🎉 Tumhara Content Ready Hai!
+            🎉 Your Content is Ready
           </h3>
 
           {/* Caption */}

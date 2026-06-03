@@ -15,29 +15,54 @@ router.post('/generate', authMiddleware, async (req, res) => {
 
     // ⭐ AI ko instructions do
     const prompt = `
-Tum ek expert marketing copywriter ho.
+You are an expert marketing copywriter.
 
 Product: ${productName}
 Description: ${description}
 Platform: ${platform}
 Tone: ${tone}
 
-Yeh generate karo JSON format mein:
+Generate content in JSON format:
 {
-  "caption": "Main caption yahan",
-  "adCopy": "Full ad copy yahan",
-  "whatsappMessage": "WhatsApp message yahan",
+  "caption": "Main caption here",
+  "adCopy": "Full ad copy here",
+  "whatsappMessage": "WhatsApp message here",
   "hashtags": "#tag1 #tag2 #tag3",
-  "callToAction": "CTA yahan"
+  "callToAction": "CTA here"
 }
 
 Rules:
-- Roman Urdu + English mix use karo
-- Platform ke hisaab se likho
-- Tone bilkul ${tone} rakho
-- Emojis use karo
-- Sirf JSON return karo — kuch aur nahi
+- Write everything in English only
+- Match the ${platform} style
+- Keep tone ${tone}
+- Use emojis
+- Return JSON only
 `;
+// prompt in roman urdu 
+//     const prompt = `
+// Tum ek expert marketing copywriter ho.
+
+// Product: ${productName}
+// Description: ${description}
+// Platform: ${platform}
+// Tone: ${tone}
+
+// Yeh generate karo JSON format mein:
+// {
+//   "caption": "Main caption yahan",
+//   "adCopy": "Full ad copy yahan",
+//   "whatsappMessage": "WhatsApp message yahan",
+//   "hashtags": "#tag1 #tag2 #tag3",
+//   "callToAction": "CTA yahan"
+// }
+
+// Rules:
+// - Roman Urdu + English mix use karo
+// - Platform ke hisaab se likho
+// - Tone bilkul ${tone} rakho
+// - Emojis use karo
+// - Sirf JSON return karo — kuch aur nahi
+// `;
 
     const response = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",

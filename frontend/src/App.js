@@ -104,14 +104,14 @@ function App() {
           {/* Form */}
           <div style={styles.authForm}>
             <h3 style={styles.formTitle}>
-              {authMode === "login" ? "Login Karo" : "Account Banao"}
+              {authMode === "login" ? "Login" : "Create Account"}
             </h3>
 
             {/* Name — sirf register mein */}
             {authMode === "register" && (
               <input
                 style={styles.authInput}
-                placeholder="Tumhara naam"
+                placeholder="Your name"
                 value={authData.name}
                 onChange={(e) => setAuthData({
                   ...authData, name: e.target.value
@@ -155,15 +155,15 @@ function App() {
             {/* Switch */}
             <p style={styles.switchText}>
               {authMode === "login"
-                ? "Account nahi hai? "
-                : "Pehle se account hai? "}
+                ? "Don't have an account? "
+                : "Already have an account?"}
               <span
                 style={styles.switchLink}
                 onClick={() => setAuthMode(
                   authMode === "login" ? "register" : "login"
                 )}
               >
-                {authMode === "login" ? "Register karo" : "Login karo"}
+                {authMode === "login" ? "Register" : "Login"}
               </span>
             </p>
           </div>
@@ -251,10 +251,10 @@ function App() {
           <div style={styles.chatBox}>
             {messages.length === 0 && (
               <p style={styles.placeholder}>
-                Assalamualaikum {user.name}! 👋
+                Welcome {user.name}! 👋
                 <br />
                 <span style={{ fontSize: "13px" }}>
-                  Koi bhi sawal poocho 😄
+                  Ask anything
                 </span>
               </p>
             )}
@@ -265,7 +265,7 @@ function App() {
                   : styles.aiMessage
               }>
                 <span style={styles.messageRole}>
-                  {msg.role === "user" ? "👤 Tum" : "🤖 AI"}
+                  {msg.role === "user" ? "👤 You" : "🤖 AI"}
                 </span>
                 <p style={styles.messageText}>{msg.content}</p>
               </div>
@@ -273,7 +273,7 @@ function App() {
             {loading && (
               <div style={styles.aiMessage}>
                 <p style={styles.messageText}>
-                  ⏳ Soch raha hoon...
+                  ⏳ Thinking...
                 </p>
               </div>
             )}
@@ -282,7 +282,7 @@ function App() {
             <input
               style={styles.input}
               type="text"
-              placeholder="Yahan likho..."
+              placeholder="Type here..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}

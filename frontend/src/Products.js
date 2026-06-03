@@ -23,12 +23,12 @@ function Products({ onProductClick }) {
   const categories = ["all", "oriental", "floral", "musk", "attar", "aquatic", "sweet"];
 
   if (loading) return (
-    <div style={styles.loading}>⏳ Products load ho rahe hain...</div>
+    <div style={styles.loading}>⏳ Loading products...</div>
   );
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>🛍️ Hamare Products</h2>
+      <h2 style={styles.title}>🛍️ Our Products</h2>
 
       {/* ⭐ Filter buttons */}
       <div style={styles.filters}>
@@ -63,7 +63,7 @@ function Products({ onProductClick }) {
               <span style={styles.rating}>⭐ {product.rating}</span>
             </div>
             <button style={styles.askBtn}>
-              🤖 AI se poocho
+              🤖 Ask AI
             </button>
           </div>
         ))}
